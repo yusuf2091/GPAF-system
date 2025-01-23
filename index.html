@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GPAF system</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <!-- Header Section -->
+    <header class="bg-gray-900 text-white py-4 px-6 shadow-md z-20 fixed w-full" id="home">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-yellow-400">GPAF</a>
+            <nav class="hidden md:flex space-x-8 text-gray-200">
+                <a href="#home" class="hover:text-yellow-400">Home</a>
+                <a href="#about" class="hover:text-yellow-400">About</a>
+                <a href="#price" class="hover:text-yellow-400">Price Overview</a>
+                <div class="relative group">
+                    <button class="hover:text-yellow-400 focus:outline-none" >Account <i class="fa-solid fa-caret-down"></i></button>
+                    <div class="absolute hidden group-hover:block bg-gray-800 text-white shadow-md w-40 z-50">
+                        <!-- <a href="#" onclick="openModal('register')" class="block px-4 py-2 hover:bg-yellow-400">Register</a>
+                        <a href="#" onclick="openModal('login')" class="block px-4 py-2 hover:bg-yellow-400">Login</a> -->
+                        <a href="javascript:void(0)" onclick="openModal('register')" class="block px-4 py-2 hover:bg-yellow-400">Register</a>
+                        <a href="javascript:void(0)" onclick="openModal('login')" class="block px-4 py-2 hover:bg-yellow-400">Login</a>
+
+                        <a href="#" class="block px-4 py-2 hover:bg-yellow-400">Logout</a>
+                    </div>
+                </div>
+            </nav>
+            <button class="md:hidden text-yellow-400" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Modal Popup -->
+    <div id="modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-70 flex items-center justify-center z-50 p-4">
+
+        <div class="bg-black bg-opacity-50 p-8 rounded-lg max-w-lg w-full relative text-white">
+            <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-400 text-2xl">&times;</button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center text-center text-white">
+    <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay loop muted>
+      <source src="https://videos.pexels.com/video-files/29068393/12563852_640_360_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70"></div> <!-- Dark overlay -->
+    <div class="relative z-10 p-8 rounded-lg ">
+      <h1 class="text-5xl font-bold font-serif sm:text-5xl md:text-7xl">GENERAL PRICE </h1>
+      <h1 class="text-5xl font-bold font-serif sm:text-5xl md:text-7xl">OVERVIEW</h1>
+      <button class="bg-transparent bg-opacity-50 text-xl font-bold rounded-xl px-6 py-3 mt-10 border-2 border-yellow-500 hover:bg-yellow-500 hover:bg-opacity-80 transition duration-500 sm:py-5 sm:px-8">Learn More <span class="text-yellow-500 text-xl "> >> </span></button>
+    </div>
+  </section>
+  
+  
+<!-- Price Overview Section -->
+<section class="py-16 px-6 bg-gray-100" id="price">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">PRICE OVERVIEW</h2>
+      <p class="text-gray-600 mb-8">This is the latest price overview of food items</p>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-300">
+          <thead class="bg-gray-800 text-white">
+            <tr>
+              <th class="py-2 px-4 border">Item</th>
+              <th class="py-2 px-4 border">Category</th>
+              <th class="py-2 px-4 border">Price</th>
+              <th class="py-2 px-4 border">Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border">
+              <td class="py-2 px-4 border">Rice</td>
+              <td class="py-2 px-4 border">Grain</td>
+              <td class="py-2 px-4 border">$50</td>
+              <td class="py-2 px-4 border">Available</td>
+            </tr>
+            <tr class="border bg-gray-100">
+              <td class="py-2 px-4 border">Beans</td>
+              <td class="py-2 px-4 border">Legume</td>
+              <td class="py-2 px-4 border">$30</td>
+              <td class="py-2 px-4 border">Out of stock</td>
+            </tr>
+            <tr class="border">
+              <td class="py-2 px-4 border">Tomato</td>
+              <td class="py-2 px-4 border">Vegetable</td>
+              <td class="py-2 px-4 border">$20</td>
+              <td class="py-2 px-4 border">Available</td>
+            </tr>
+            <tr class="border bg-gray-100">
+              <td class="py-2 px-4 border">Onion</td>
+              <td class="py-2 px-4 border">Vegetable</td>
+              <td class="py-2 px-4 border">$15</td>
+              <td class="py-2 px-4 border">Available</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-8 flex justify-center space-x-4">
+        <button class="px-4 py-2 bg-gray-800 text-white rounded"><i class="fa-solid fa-left-long"></i></button>
+        <span class="px-4 py-2">1</span>
+        <span class="px-4 py-2">2</span>
+        <span class="px-4 py-2">3</span>
+        <span class="px-4 py-2">4</span>
+        <span class="px-4 py-2">5</span>
+        <button class="px-4 py-2 bg-gray-800 text-white rounded"><i class="fa-solid fa-right-long"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+<section class="py-16 px-6 bg-white" id="about">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
+        <p class="text-gray-600 mb-4">
+          We are dedicated to providing accurate and up-to-date food price data to help consumers
+          make informed purchasing decisions. Our platform aggregates prices from various sources
+          to ensure reliability and transparency.
+        </p>
+        <p class="text-gray-600">
+          With a commitment to excellence and a user-friendly experience, we strive to bring
+          you the best service in food price monitoring.
+        </p>
+      </div>
+      <div>
+        <img src="https://images.pexels.com/photos/8422728/pexels-photo-8422728.jpeg?auto=compress&cs=tinysrgb&w=600" alt="About Us" class="w-full rounded-lg shadow-md">
+      </div>
+    </div>
+  </section>
+
+<!-- Footer Section -->
+<!-- Contact Us Section -->
+<section class="py-16 px-6 bg-gray-100" id="contact">
+  <div class="container mx-auto max-w-md text-center">
+    <h2 class="text-4xl font-bold text-gray-900 mb-6">Contact Us</h2>
+    <p class="text-gray-600 mb-8">
+      Have any questions or need assistance? Feel free to reach out to us using the form below.
+    </p>
+    <form action="#" method="POST" class="bg-white p-8 rounded-lg shadow-md">
+      <div class="mb-4">
+        <label for="name" class="block text-left text-gray-700 font-bold mb-2">Name</label>
+        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400">
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-left text-gray-700 font-bold mb-2">Email</label>
+        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400">
+      </div>
+      <div class="mb-4">
+        <label for="message" class="block text-left text-gray-700 font-bold mb-2">Message</label>
+        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-yellow-400 text-white py-3 rounded-lg font-bold hover:bg-yellow-500 transition-all">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-white py-16 px-6">
+  <div class="container mx-auto grid grid-cols-1 sm:grid-cols-1 sm:items-center md:grid-cols-2 gap-8">
+    <div class="">
+      <h1 class="text-3xl font-bold text-yellow-400 mb-4 ">Follow us for updates!</h1>
+      <h3 class="text-xl ">On Any of These Platforms <br>Thanks for stopping by!</h3>
+    <div class="flex space-x-4 mt-2 ">
+      <a href="#" class="text-white-500 hover:text-yellow-300 bg-yellow-500 py-3 px-5 rounded-full hover:translate-y-px">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="text-white-500 hover:text-yellow-300 bg-yellow-500 py-3 px-4 rounded-full hover:translate-y-px">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="text-white-500 hover:text-yellow-300 bg-yellow-500 py-3 px-4 rounded-full hover:translate-y-px">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="text-white-500 bg-yellow-500 py-3 px-4 rounded-full hover:text-yellow-300 hover:translate-y-px">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    
+    </div>
+    <!-- Links Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 ">
+      <div class="">
+        <h3 class="text-xl font-bold text-yellow-400 mb-4 ">Links</h3>
+      <ul class="space-y-2">
+        <li><a href="#home" class="hover:text-yellow-400">Home</a></li>
+        <li><a href="#about" class="hover:text-yellow-400">About</a></li>
+        <li><a href="#price" class="hover:text-yellow-400">Price Overview</a></li>
+        <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+      </ul>
+      </div>
+    
+
+    <!-- Address and state -->
+    <div class="space-y-2">
+      <h3 class="text-xl font-bold text-yellow-400 mb-4 leading-z">Address & State</h3>
+      <p class="text-gray-300 ">Stemlab Innovations</p>
+      <p class="text-gray-300 ">Kano, Nigeria</p>
+      <p class="text-gray-300 ">gpaf@gmail.com</p>
+      <p class="text-gray-300 ">+234 800 123 4567</p>
+    </div>
+    
+    </div> 
+
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="text-center text-gray-500 mt-8 border-t border-gray-700 pt-4">
+    &copy; 2025 GPAF. All Rights Reserved.
+  </div>
+</footer>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
